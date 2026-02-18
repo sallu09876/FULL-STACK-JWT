@@ -5,7 +5,7 @@ import './App.css';
 export const App = () => {
   const [token, setToken] = useState('');
 
-  const handleButtonClick = async () => {
+  const createToken = async () => {
     try {
       const res = await axios.get(
         "http://localhost:8000/auth/create-token"
@@ -68,7 +68,7 @@ export const App = () => {
       <h1>JWT</h1>
       <p>This application handles JWT token creation, updating, and storage.</p>
 
-      <button onClick={handleButtonClick}> Create Token </button>
+      <button onClick={createToken}> Create Token </button>
 
       <p>Generated Token: {typeof token === 'string' ? token : 'No token generated yet'}</p>
 
